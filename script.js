@@ -13,11 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
         wordInput.addEventListener("input", function () {
 
             const text = wordInput.value;
-
-            // Character count
             charCount.textContent = text.length;
 
-            // Word count
             const trimmedText = text.trim();
 
             if (trimmedText === "") {
@@ -27,6 +24,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     trimmedText.split(/\s+/).length;
             }
 
+        });
+
+    }
+
+
+    // =========================
+    // PASSWORD LENGTH SLIDER
+    // =========================
+
+    const passwordLength =
+        document.getElementById("passwordLength");
+
+    const lengthValue =
+        document.getElementById("lengthValue");
+
+    if (passwordLength && lengthValue) {
+
+        lengthValue.textContent = passwordLength.value;
+
+        passwordLength.addEventListener("input", function () {
+            lengthValue.textContent = passwordLength.value;
         });
 
     }
@@ -42,8 +60,6 @@ function getCaseInput() {
     return document.getElementById("caseInput");
 }
 
-
-// UPPERCASE
 function convertUpper() {
 
     const input = getCaseInput();
@@ -54,8 +70,6 @@ function convertUpper() {
 
 }
 
-
-// lowercase
 function convertLower() {
 
     const input = getCaseInput();
@@ -66,8 +80,6 @@ function convertLower() {
 
 }
 
-
-// Title Case
 function convertTitle() {
 
     const input = getCaseInput();
@@ -84,8 +96,6 @@ function convertTitle() {
 
 }
 
-
-// Sentence case
 function convertSentence() {
 
     const input = getCaseInput();
@@ -102,8 +112,6 @@ function convertSentence() {
 
 }
 
-
-// CLEAR
 function clearCaseText() {
 
     const input = getCaseInput();
@@ -113,24 +121,28 @@ function clearCaseText() {
     }
 
 }
+
+
 // =========================
 // PERCENTAGE CALCULATOR
 // =========================
 
 function calculatePercentage() {
 
-    const percent = parseFloat(
-        document.getElementById("percentValue").value
-    );
+    const percent =
+        parseFloat(document.getElementById("percentValue").value);
 
-    const number = parseFloat(
-        document.getElementById("numberValue").value
-    );
+    const number =
+        parseFloat(document.getElementById("numberValue").value);
 
-    const result = document.getElementById("percentageResult");
+    const result =
+        document.getElementById("percentageResult");
 
     if (isNaN(percent) || isNaN(number)) {
-        result.textContent = "Result: Please enter both numbers.";
+
+        result.textContent =
+            "Result: Please enter both numbers.";
+
         return;
     }
 
@@ -139,7 +151,6 @@ function calculatePercentage() {
     result.textContent = "Result: " + answer;
 
 }
-
 
 function clearPercentage() {
 
@@ -151,29 +162,19 @@ function clearPercentage() {
         "Result: —";
 
 }
+
+
 // =========================
 // PASSWORD GENERATOR
 // =========================
 
-const passwordLength = document.getElementById("passwordLength");
-const lengthValue = document.getElementById("lengthValue");
-
-if (passwordLength && lengthValue) {
-
-    passwordLength.addEventListener("input", function () {
-        lengthValue.textContent = passwordLength.value;
-    });
-
-}
-
-
 function generatePassword() {
 
-    const output = document.getElementById("passwordOutput");
+    const output =
+        document.getElementById("passwordOutput");
 
-    const length = parseInt(
-        document.getElementById("passwordLength").value
-    );
+    const length =
+        parseInt(document.getElementById("passwordLength").value);
 
     const includeUpper =
         document.getElementById("includeUpper").checked;
@@ -185,18 +186,22 @@ function generatePassword() {
         document.getElementById("includeSymbols").checked;
 
 
-    let characters = "abcdefghijklmnopqrstuvwxyz";
+    let characters =
+        "abcdefghijklmnopqrstuvwxyz";
 
     if (includeUpper) {
-        characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        characters +=
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
 
     if (includeNumbers) {
-        characters += "0123456789";
+        characters +=
+            "0123456789";
     }
 
     if (includeSymbols) {
-        characters += "!@#$%^&*()_+-=[]{}";
+        characters +=
+            "!@#$%^&*()_+-=[]{}";
     }
 
 
@@ -207,7 +212,7 @@ function generatePassword() {
         const randomIndex =
             Math.floor(Math.random() * characters.length);
 
-        password += characters[randomIndex];
+        password += characters.charAt(randomIndex);
 
     }
 
@@ -221,10 +226,23 @@ function copyPassword() {
     const output =
         document.getElementById("passwordOutput");
 
-    if (!output.value) {
+    if (!output || output.value === "") {
         return;
     }
 
-    navigator.clipboard.writeText(output.value);
+    navigator.clipboard.writeText(output.value)
+        .then(function () {
+
+            alert("Password copied!");
+
+        })
+        .catch(function () {
+
+            output.select();
+            document.execCommand("copy");
+
+            alert("Password copied!");
+
+        });
 
 }

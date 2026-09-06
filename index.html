@@ -116,10 +116,53 @@
 </div>
 
             <div class="tool-card">
-                <h3>Password Generator</h3>
-                <p>Create strong random passwords.</p>
-                <button>Coming Soon</button>
-            </div>
+    <h3>Password Generator</h3>
+    <p>Create strong and secure random passwords.</p>
+
+    <input
+        type="text"
+        id="passwordOutput"
+        placeholder="Your password will appear here"
+        readonly
+        style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <label>Password Length: <span id="lengthValue">12</span></label>
+
+    <input
+        type="range"
+        id="passwordLength"
+        min="6"
+        max="32"
+        value="12"
+        style="width:100%; margin:10px 0;"
+    >
+
+    <div style="margin:10px 0;">
+        <label>
+            <input type="checkbox" id="includeUpper" checked>
+            Uppercase
+        </label>
+
+        <label style="margin-left:10px;">
+            <input type="checkbox" id="includeNumbers" checked>
+            Numbers
+        </label>
+
+        <label style="margin-left:10px;">
+            <input type="checkbox" id="includeSymbols" checked>
+            Symbols
+        </label>
+    </div>
+
+    <button onclick="generatePassword()">
+        Generate Password
+    </button>
+
+    <button onclick="copyPassword()">
+        Copy
+    </button>
+</div>
 
         </section>
 

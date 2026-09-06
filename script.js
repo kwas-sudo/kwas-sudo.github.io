@@ -113,3 +113,41 @@ function clearCaseText() {
     }
 
 }
+// =========================
+// PERCENTAGE CALCULATOR
+// =========================
+
+function calculatePercentage() {
+
+    const percent = parseFloat(
+        document.getElementById("percentValue").value
+    );
+
+    const number = parseFloat(
+        document.getElementById("numberValue").value
+    );
+
+    const result = document.getElementById("percentageResult");
+
+    if (isNaN(percent) || isNaN(number)) {
+        result.textContent = "Result: Please enter both numbers.";
+        return;
+    }
+
+    const answer = (percent / 100) * number;
+
+    result.textContent = "Result: " + answer;
+
+}
+
+
+function clearPercentage() {
+
+    document.getElementById("percentValue").value = "";
+
+    document.getElementById("numberValue").value = "";
+
+    document.getElementById("percentageResult").textContent =
+        "Result: —";
+
+}

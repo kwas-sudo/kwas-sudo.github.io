@@ -59,10 +59,24 @@
 </div>
 
             <div class="tool-card">
-                <h3>Case Converter</h3>
-                <p>Convert text to uppercase or lowercase.</p>
-                <button>Coming Soon</button>
-            </div>
+    <h3>Case Converter</h3>
+    <p>Convert your text into different letter cases.</p>
+
+    <textarea
+        id="caseInput"
+        placeholder="Type or paste your text here..."
+        rows="5"
+        style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
+    ></textarea>
+
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+        <button onclick="convertUpper()">UPPERCASE</button>
+        <button onclick="convertLower()">lowercase</button>
+        <button onclick="convertTitle()">Title Case</button>
+        <button onclick="convertSentence()">Sentence case</button>
+        <button onclick="clearCaseText()">Clear</button>
+    </div>
+</div>
 
             <div class="tool-card">
                 <h3>Percentage Calculator</h3>

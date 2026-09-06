@@ -1,18 +1,29 @@
-const wordInput = document.getElementById("wordInput");
-const wordCount = document.getElementById("wordCount");
-const charCount = document.getElementById("charCount");
+document.addEventListener("DOMContentLoaded", function () {
 
-wordInput.addEventListener("input", function () {
+    const wordInput = document.getElementById("wordInput");
+    const wordCount = document.getElementById("wordCount");
+    const charCount = document.getElementById("charCount");
 
-    const text = wordInput.value;
+    if (!wordInput || !wordCount || !charCount) {
+        return;
+    }
 
-    // Count characters
-    charCount.textContent = text.length;
+    wordInput.addEventListener("input", function () {
 
-    // Count words
-    const words = text.trim() === ""
-        ? []
-        : text.trim().split(/\s+/);
+        const text = wordInput.value;
 
-    wordCount.textContent = words.length;
+        // Character count
+        charCount.textContent = text.length;
+
+        // Word count
+        const trimmedText = text.trim();
+
+        if (trimmedText === "") {
+            wordCount.textContent = "0";
+        } else {
+            wordCount.textContent = trimmedText.split(/\s+/).length;
+        }
+
+    });
+
 });

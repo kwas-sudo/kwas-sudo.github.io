@@ -79,10 +79,37 @@
 </div>
 
             <div class="tool-card">
-                <h3>Percentage Calculator</h3>
-                <p>Calculate percentages easily.</p>
-                <button>Coming Soon</button>
-            </div>
+    <h3>Percentage Calculator</h3>
+    <p>Calculate percentages quickly and easily.</p>
+
+    <label>What is</label>
+    <input
+        type="number"
+        id="percentValue"
+        placeholder="Enter percentage"
+        style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <label>% of</label>
+    <input
+        type="number"
+        id="numberValue"
+        placeholder="Enter number"
+        style="width:100%; padding:12px; margin:8px 0;"
+    >
+
+    <button onclick="calculatePercentage()">
+        Calculate
+    </button>
+
+    <button onclick="clearPercentage()">
+        Clear
+    </button>
+
+    <div id="percentageResult" style="margin-top:15px; font-weight:bold;">
+        Result: —
+    </div>
+</div>
 
             <div class="tool-card">
                 <h3>Password Generator</h3>

@@ -151,3 +151,80 @@ function clearPercentage() {
         "Result: —";
 
 }
+// =========================
+// PASSWORD GENERATOR
+// =========================
+
+const passwordLength = document.getElementById("passwordLength");
+const lengthValue = document.getElementById("lengthValue");
+
+if (passwordLength && lengthValue) {
+
+    passwordLength.addEventListener("input", function () {
+        lengthValue.textContent = passwordLength.value;
+    });
+
+}
+
+
+function generatePassword() {
+
+    const output = document.getElementById("passwordOutput");
+
+    const length = parseInt(
+        document.getElementById("passwordLength").value
+    );
+
+    const includeUpper =
+        document.getElementById("includeUpper").checked;
+
+    const includeNumbers =
+        document.getElementById("includeNumbers").checked;
+
+    const includeSymbols =
+        document.getElementById("includeSymbols").checked;
+
+
+    let characters = "abcdefghijklmnopqrstuvwxyz";
+
+    if (includeUpper) {
+        characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+
+    if (includeNumbers) {
+        characters += "0123456789";
+    }
+
+    if (includeSymbols) {
+        characters += "!@#$%^&*()_+-=[]{}";
+    }
+
+
+    let password = "";
+
+    for (let i = 0; i < length; i++) {
+
+        const randomIndex =
+            Math.floor(Math.random() * characters.length);
+
+        password += characters[randomIndex];
+
+    }
+
+    output.value = password;
+
+}
+
+
+function copyPassword() {
+
+    const output =
+        document.getElementById("passwordOutput");
+
+    if (!output.value) {
+        return;
+    }
+
+    navigator.clipboard.writeText(output.value);
+
+}

@@ -63,8 +63,26 @@
         <section class="tools">
 
             <div class="tool-card">
-    <h3>Word Counter</h3>
-    <p>Count words, characters and sentences instantly.</p>
+    <h3>Free Word Counter</h3>
+
+    <p>
+        Count words and characters instantly with our free online word counter.
+        Simply type or paste your text below to get quick results.
+    </p>
+
+    <textarea
+        id="wordInput"
+        placeholder="Type or paste your text here..."
+        rows="5"
+        style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
+    ></textarea>
+
+    <p>
+        Words: <strong id="wordCount">0</strong>
+        |
+        Characters: <strong id="charCount">0</strong>
+    </p>
+</div>
 
     <textarea
         id="wordInput"
@@ -81,8 +99,28 @@
 </div>
 
             <div class="tool-card">
-    <h3>Case Converter</h3>
-    <p>Convert your text into different letter cases.</p>
+    <h3>Free Case Converter</h3>
+
+    <p>
+        Convert text to uppercase, lowercase, title case, or sentence case
+        with our free online case converter.
+    </p>
+
+    <textarea
+        id="caseInput"
+        placeholder="Type or paste your text here..."
+        rows="5"
+        style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
+    ></textarea>
+
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;">
+        <button onclick="convertUpper()">UPPERCASE</button>
+        <button onclick="convertLower()">lowercase</button>
+        <button onclick="convertTitle()">Title Case</button>
+        <button onclick="convertSentence()">Sentence case</button>
+        <button onclick="clearCaseText()">Clear</button>
+    </div>
+            </div>
 
     <textarea
         id="caseInput"
@@ -100,8 +138,47 @@
     </div>
 </div>
 <div class="tool-card">
-    <h3>Percentage Calculator</h3>
-    <p>Calculate percentages quickly and easily.</p>
+    <h3>Free Percentage Calculator</h3>
+
+    <p>
+        Calculate percentages quickly and easily with our free online
+        percentage calculator. Enter a percentage and a number to get
+        your result instantly.
+    </p>
+
+    <label>What is</label>
+
+    <input
+        type="number"
+        id="percentValue"
+        placeholder="Enter percentage"
+        style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <label>% of</label>
+
+    <input
+        type="number"
+        id="numberValue"
+        placeholder="Enter number"
+        style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <button onclick="calculatePercentage()">
+        Calculate
+    </button>
+
+    <button onclick="clearPercentage()">
+        Clear
+    </button>
+
+    <div
+        id="percentageResult"
+        style="margin-top:15px; font-weight:bold;"
+    >
+        Result: —
+    </div>
+</div>
 
     <label>What is</label>
 
@@ -138,8 +215,58 @@
 </div>
 
             <div class="tool-card">
-    <h3>Password Generator</h3>
-    <p>Create strong and secure random passwords.</p>
+    <h3>Free Password Generator</h3>
+
+    <p>
+        Create strong and secure random passwords with our free online
+        password generator. Choose your password length and include
+        uppercase letters, numbers, and symbols.
+    </p>
+
+    <input
+        type="text"
+        id="passwordOutput"
+        placeholder="Your password will appear here"
+        readonly
+        style="width:100%; padding:12px; margin:10px 0; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <label>Password Length: <span id="lengthValue">12</span></label>
+
+    <input
+        type="range"
+        id="passwordLength"
+        min="6"
+        max="32"
+        value="12"
+        style="width:100%; margin:10px 0;"
+    >
+
+    <div style="margin:10px 0;">
+        <label>
+            <input type="checkbox" id="includeUpper" checked>
+            Uppercase
+        </label>
+
+        <label style="margin-left:10px;">
+            <input type="checkbox" id="includeNumbers" checked>
+            Numbers
+        </label>
+
+        <label style="margin-left:10px;">
+            <input type="checkbox" id="includeSymbols" checked>
+            Symbols
+        </label>
+    </div>
+
+    <button onclick="generatePassword()">
+        Generate Password
+    </button>
+
+    <button onclick="copyPassword()">
+        Copy
+    </button>
+</div>
 
     <input
         type="text"

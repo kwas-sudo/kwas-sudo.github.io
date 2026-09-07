@@ -4,50 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Free Percentage Calculator - Calculate Percentages | KWAS Tools</title>
+    <title>Free Percentage Calculator - KWAS Tools</title>
 
     <meta name="description"
-        content="Use our free online percentage calculator to calculate percentages quickly and easily. Enter a percentage and number to get your result instantly.">
+        content="Use our free online percentage calculator to calculate percentages quickly and easily.">
 
     <meta name="robots" content="index, follow">
 
     <link rel="canonical"
         href="https://kwas-sudo.github.io/percentage-calculator.html">
 
-    <meta property="og:title"
-        content="Free Percentage Calculator - KWAS Tools">
-
-    <meta property="og:description"
-        content="Calculate percentages quickly and easily with our free online percentage calculator.">
-
-    <meta property="og:type" content="website">
-
-    <meta property="og:url"
-        content="https://kwas-sudo.github.io/percentage-calculator.html">
-
     <link rel="stylesheet" href="style.css">
-    <style>
-.tool-card {
-    height: auto !important;
-    max-height: none !important;
-    min-height: 0 !important;
-    overflow: visible !important;
-}
-
-.tools {
-    height: auto !important;
-    max-height: none !important;
-    overflow: visible !important;
-}
-
-.tool-card input {
-    box-sizing: border-box;
-}
-
-.tool-card button {
-    margin-top: 8px;
-}
-    </style>
 </head>
 
 <body>
@@ -68,40 +35,116 @@
 <main>
 
 <section class="hero">
-
     <h2>Free Online Percentage Calculator</h2>
 
     <p>
         Calculate percentages quickly and easily with our free online
-        percentage calculator. Enter a percentage and a number to get
-        your result instantly.
+        percentage calculator.
     </p>
-
 </section>
 
 <section class="tools">
 
-    <div class="tool-card">
+<div class="tool-card">
 
-        <h3>Percentage Calculator</h3>
+    <h3>Percentage Calculator</h3>
+
+    <p>
+        Enter a percentage and a number below to calculate the result.
+    </p>
+
+    <label for="percentValue">What is</label>
+
+    <input
+        type="number"
+        id="percentValue"
+        placeholder="Enter percentage"
+        style="width:100%; padding:12px; margin:8px 0 15px; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <label for="numberValue">% of</label>
+
+    <input
+        type="number"
+        id="numberValue"
+        placeholder="Enter number"
+        style="width:100%; padding:12px; margin:8px 0 15px; border:1px solid #ddd; border-radius:8px;"
+    >
+
+    <div>
+        <button onclick="calculatePercentage()">
+            Calculate
+        </button>
+
+        <button onclick="clearPercentage()">
+            Clear
+        </button>
+    </div>
+
+    <div
+        id="percentageResult"
+        style="margin-top:15px; font-weight:bold;"
+    >
+        Result: —
+    </div>
+
+</div>
+
+</section>
+
+<section class="hero">
+
+    <h2>How to Calculate a Percentage</h2>
+
+    <p>
+        Enter the percentage and number above, then press Calculate.
+        For example, 20% of 100 equals 20.
+    </p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <h3>Is this calculator free?</h3>
+
+    <p>
+        Yes. KWAS Tools provides this percentage calculator free to use.
+    </p>
+
+</section>
+
+<section class="hero">
+
+    <h2>More Free Online Tools</h2>
+
+    <p>
+        <a href="word-counter.html">Word Counter</a> |
+        <a href="case-converter.html">Case Converter</a> |
+        <a href="password-generator.html">Password Generator</a>
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div class="container">
+
+        <p>© 2026 KWAS Tools. All rights reserved.</p>
 
         <p>
-            Enter the percentage and number below to calculate the result.
+            <a href="index.html">Home</a> |
+            <a href="about.html">About Us</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms.html">Terms & Conditions</a> |
+            <a href="disclaimer.html">Disclaimer</a>
         </p>
 
-        <label>What is</label>
+    </div>
 
-        <input
-            type="number"
-            id="percentValue"
-            placeholder="Enter percentage"
-            style="width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:8px;"
-        >
+</footer>
 
-        <label>% of</label>
+<script src="script.js?v=3"></script>
 
-        <input
-            type="number"
-            id="numberValue"
-            placeholder="Enter number"
-            style="width:100%; padding:12px; margin:8px 
+</body>
+</html>
